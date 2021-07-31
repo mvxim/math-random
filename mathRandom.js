@@ -21,16 +21,31 @@ iterationsInput.addEventListener('input', checkMatch)
 function checkMatch() {
   let guessNumber = Number(guessInput.value)
   var rangeNumber = Number(rangeInput.value)
+  let iterationsNumber = Number(iterationsInput.value)
   resultConsole.textContent = ''
   if (guessNumber > rangeNumber) {
     disableButton();
-    iterationsCounter.textContent = '∞'
+    iterationsCounter.textContent = '∞ Число находится за пределами диапазона: перебор будет бесконечным и быстро заполнит всю память браузера... Уменьши число или увеличь диапазон.'
     console.log('Не входит')
   }
   else {
     enableButton()
     iterationsCounter.textContent = ''
+    checkPossibility()
     console.log('Входит')
+  }
+}
+
+function checkPossibility() {
+  let guessNumber = Number(guessInput.value)
+  var rangeNumber = Number(rangeInput.value)
+  let iterationsNumber = Number(iterationsInput.value)
+  if (iterationsNumber < rangeNumber*2) {
+    disableButton();
+    iterationsCounter.textContent = 'Слишком маленькое число итераций для такого большого диапазона. Программа может не успеть подобрать число. Увеличь число итераций.'
+  }
+  else {
+    enableButton()
   }
 }
 
