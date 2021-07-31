@@ -43,6 +43,10 @@ function enableButton() {
   rollBtn.classList.replace('roll-submit_disabled', 'roll-submit')  
 }
 
+function clearConsole() {
+  resultConsole.textContent = ''
+}
+
 function roll(guessNumber, rangeNumber, iterationsNumber) {
   guessNumber = Number(guessInput.value)
   rangeNumber = Number(rangeInput.value)
@@ -57,11 +61,6 @@ function roll(guessNumber, rangeNumber, iterationsNumber) {
   console.log(`Перебор окончен, количество операций — ${rollCounter}`)
   iterationsCounter.textContent = 'Получилось подобрать за ' + rollCounter + ' попыток'
 }
-
-
-
-// for (let i = 0; i < rollBtn.length; i++) {
-//   rollBtn[i].addEventListener('click', roll(customGuess, customRange, customIterations));
-// }
+rollBtn.addEventListener('click', clearConsole)
 rollBtn.addEventListener('click', roll)
-;
+
