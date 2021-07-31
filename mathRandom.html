@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <title>Apply JavaScript example</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <main class="main">
+    <h1>MathRandom</h1>
+    <p>Эта бесполезная программа ищет загаданное число в диапазоне путём случайного перебора. На каждом шаге она создает случайное число и сверяет его с загаданным.</p>
+    <div class="main-block">
+      <div class="block__label">
+        <label for="guessField">Введи число, которое нужно подобрать:</label>
+      </div>
+      <div class="block__input">
+        <input type="text" id="guessInput" class="guessInput" value="1">
+      </div>
+    </div>
+    <div class="main-block">
+      <div class="block__label">
+        <label for="guessField">Введи диапазон, в котором подбирать:</label>
+      </div>
+      <div class="block__input">
+        <input type="text" id="rangeInput" class="rangeInput" value="100">
+      </div>
+    </div>
+    <div class=main-block>
+      <div class="block__label">
+        <label for="guessField">Введи число попыток:</label>
+      </div>
+      <div class="block__input">
+        <input type="text" id="iterationsInput" class="iterationsInput" value="1000">
+      </div>
+    </div>
+    <!-- <div class="main-block">
+      <div class="block__label">
+        <label for="allowIterations">Ограничивать количество попыток?</label>
+      </div>
+      <div class="block__input">
+        <input type="checkbox" name="allowIterations" id="allowIterations">
+      </div>
+    </div> -->
+    <button class="roll-submit">Запустить</button>
+    <p class="iterations-para"><span class="iterationsCounter"></span> </p>
+    <p class="console"><span class="result-console"></span></p>
+  </main>
+  <script src="./mathRandom.js" defer></script>
+</body>
+
+</html>
